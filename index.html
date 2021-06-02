@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
+        <script src="https://unpkg.com/aframe-text-geometry-component@^0.5.0/dist/aframe-text-geometry-component.min.js"></script> 
+        <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
+        <script src="https://recast-api.donmccurdy.com/aframe-inspector-plugin-recast.js"></script>
+        <script>
+            AFRAME.registerComponent('cursor-listener', {
+                init: function () {
+        this.el.addEventListener('click', function (evt) {
+         let hallMonster=document.getElementById("hall-monster-1");
+            hallMonster.setAttribute('position', {x: 11.309, y: -0.098, z: 17.683});
+        let hallMonster2=document.getElementById("hall-monster-2");
+            hallMonster2.setAttribute('position', {x: 0.883, y: 0.000, z: 17.401});
+            let candle=document.getElementById("c");
+            candle.setAttribute('visible','false')
+            let text=document.getElementById("test");
+            text.setAttribute('visible','false')
+        
+         console.log(candle)              
+     });
+}
+});
+AFRAME.registerComponent('raycaster-autorefresh', {
+  init: function () {
+    var el = this.el;
+    this.el.addEventListener('model-loaded', function () {
+      var cursorEl = el.querySelector('[raycaster]');
+      cursorEl.components.raycaster.refreshObjects();
+    });
+  }
+});
+         </script>
+       
+        
+        <title>3D module</title>
+    </head>
+    <body>
+            
+            <a-scene inspector-plugin-recast >
+                <a-assets>
+                    <a-asset-item id="city" src="assets/city/city.glb"></a-asset-item>
+                    <a-asset-item id="bed" src="assets/bed/bed.glb"></a-asset-item>
+                    <a-asset-item id="zombie" src="assets/zombie_face/zombie.glb"></a-asset-item>
+                  
+                   
+                    <a-asset-item id="candle" src="assets/candle/candle.glb"></a-asset-item>
+                
+                    <a-asset-item id="hall-monster" src="assets/hall-monsters/untitled.glb"></a-asset-item>
+                  
+                  
+
+                </a-assets>
+                <a-sky src="#sky"></a-sky>
+                <a-entity gltf-model="#city"position="0 -3 0" scale="2 2 2">
+
+                </a-entity>
+                
+                <a-entity movement-controls="speed:0.15; constrainToNavMesh:true" position="6.36778 0 -17.63882" rotation="0 180 0" id="camera">
+                    <a-entity camera position ="0 1.6 0"
+                                      look-controls="pointerLockEnabled:true"
+                                      ><a-cursor color="white"></a-cursor></a-entity>
+                                      
+                    </a-entity>
+                </a-entity>
+               <!-- <a-entity text-geometry="value: monster's\nUnder The Bed; font:#optimerBoldFont" 
+                material="src:#rusted" position="12.70102 2.26023 -16.5879" rotation="0 -90 0"></a-entity>-->
+                <a-text value="...awaits you!"  position="9.637 3.0 -13.46" rotation="0 -180 0"></a-text>
+                
+               
+                <a-entity light="angle: 65.4; color: #fffafa; type: point"></a-entity>
+                
+                 
+                </a-entity>
+               
+               
+                <a-entity gltf-model="#bed" position="-22.6954 0.76487 17.67232" scale="0.007 0.007 0.007" rotation="0 180 0">                           
+                </a-entity>
+                <a-entity light="type: spot" position="-5.553 5.029 12.39"></a-entity>
+                <a-entity id="hall-monster-2" gltf-model="#hall-monster" position="-0.337 0 11.910" scale="0.0015 0.0015 0.0015" rotation="0 -90 0"> 
+                    <a-animation attribute="rotation"
+                                           to="0 360 0"
+                                           repeat="indefinite"
+                                           dur="5000"
+                                           easing="linear">
+
+                    </a-animation>                          
+                </a-entity>
+                <a-entity id="hall-monster-1" gltf-model="#hall-monster" position="12.367 -0.098 12.085" scale="0.0015 0.0015 0.0015"> 
+                    <a-animation attribute="rotation"
+                                           to="0 360 0"
+                                           repeat="indefinite"
+                                           dur="5000"
+                                           easing="linear">
+
+                    </a-animation>                          
+                </a-entity>
+               
+                <a-entity id="m"glb-model="#monster" position="-22.6954 0.76487 17.67232"  rotation="0 180 0">          
+                </a-entity>
+                
+                <a-entity id="c" cursor-listener gltf-model="#candle"  scale="0.01 0.01 0.01" position="5.939 -0.747 13.29">          
+                </a-entity>
+                <a-box cursor-listener color="#CCC" width="3" depth="3" height="0.1" position="5.939 -0.747 13.29"></a-box>
+                <a-text id="test" value="Monsters hate me" position="6.986 0.6 13.679" rotation="0 -180 0"></a-text>
+               
+                <a-entity light="type: spot" position="8.27914 3.15844 -10.91814"></a-entity>
+                
+                <a-entity gltf-model="#zombie" rotation="0 -100 0"position="10.259 0.75593 -14.48495" scale="2 2 2">
+                           
+                </a-entity>
+               
+               
+                
+              
+            </a-scene>
+            
+           
+    </body>
+</html>
