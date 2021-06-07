@@ -6,40 +6,26 @@
         <script src="https://unpkg.com/aframe-text-geometry-component@^0.5.0/dist/aframe-text-geometry-component.min.js"></script> 
         <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
         <script src="https://recast-api.donmccurdy.com/aframe-inspector-plugin-recast.js"></script>
-        <script>
-            AFRAME.registerComponent('cursor-listener', {
-                init: function () {
-        this.el.addEventListener('click', function (evt) {
-         let hallMonster=document.getElementById("hall-monster-1");
-            hallMonster.setAttribute('position', {x: 11.309, y: -0.098, z: 17.683});
-        let hallMonster2=document.getElementById("hall-monster-2");
-            hallMonster2.setAttribute('position', {x: 0.883, y: 0.000, z: 17.401});
-            let candle=document.getElementById("c");
-            candle.setAttribute('visible','false')
-            let text=document.getElementById("test");
-            text.setAttribute('visible','false')
-        
-         console.log(candle)              
-     });
-}
-});
-AFRAME.registerComponent('raycaster-autorefresh', {
-  init: function () {
-    var el = this.el;
-    this.el.addEventListener('model-loaded', function () {
-      var cursorEl = el.querySelector('[raycaster]');
-      cursorEl.components.raycaster.refreshObjects();
-    });
-  }
-});
+        <script src="https://unpkg.com/aframe-event-set-component@^4.0.0/dist/aframe-event-set-component.min.js"></script>
+        <script src="https://unpkg.com/super-hands@2.1.0/dist/super-hands.min.js"></script>
+        <script src="//cdn.rawgit.com/donmccurdy/aframe-extras/v3.13.1/dist/aframe-extras.min.js"></script>
+        <script src="candle.js">
+       
          </script>
        
-        
+       <link rel="stylesheet" href="style.css">
         <title>3D module</title>
     </head>
     <body>
+        <div class="container">
             
-            <a-scene inspector-plugin-recast >
+                <h1>Coins: 0</h1>
+                <h1>Cards: 0</h1>
+            
+        </div>
+            
+            <a-scene inspector-plugin-recast physics="gravity:-9.8; restitution:0.7">
+                
                 <a-assets>
                     <a-asset-item id="city" src="assets/city/city.glb"></a-asset-item>
                     <a-asset-item id="bed" src="assets/bed/bed.glb"></a-asset-item>
@@ -49,6 +35,12 @@ AFRAME.registerComponent('raycaster-autorefresh', {
                     <a-asset-item id="candle" src="assets/candle/candle.glb"></a-asset-item>
                 
                     <a-asset-item id="hall-monster" src="assets/hall-monsters/untitled.glb"></a-asset-item>
+                    <audio id="soundi" src="assets/sounds/backGround.mp3" preload="auto"></audio>
+                    <img id="card1" src="assets/images/card1.jpg">
+                    <img id="card2" src="assets/images/card2.jpg">
+                    <img id="card3" src="assets/images/card3.jpg">
+                    <img id="card4" src="assets/images/card4.jpg">
+                   
                   
                   
 
@@ -58,10 +50,13 @@ AFRAME.registerComponent('raycaster-autorefresh', {
 
                 </a-entity>
                 
-                <a-entity movement-controls="speed:0.15; constrainToNavMesh:true" position="6.36778 0 -17.63882" rotation="0 180 0" id="camera">
+                <a-entity movement-controls="speed:0.15; constrainToNavMesh:true" position="6.36778 0 -17.63882" rotation="0 180 0" id="camera" progressive-controls>
                     <a-entity camera position ="0 1.6 0"
                                       look-controls="pointerLockEnabled:true"
-                                      ><a-cursor color="white"></a-cursor></a-entity>
+                                      ><a-cursor color="white"></a-cursor>
+                                    <!----  <a-sound src="url(assets/sounds/backGround.mp3)" autoplay="true"
+                 position="0 0 0" loop="true" volume="0.5"></a-sound>-->
+                    </a-entity>
                                       
                     </a-entity>
                 </a-entity>
@@ -74,7 +69,18 @@ AFRAME.registerComponent('raycaster-autorefresh', {
                 
                  
                 </a-entity>
+                 
                
+                <a-image src="#card1" rotation="-90 0 0" position="-5.619 -0.504 13.326"></a-image>
+                <a-image src="#card2" rotation="-90 0 0" position="1.113 -0.504 13.178"></a-image>
+                <a-image src="#card3" rotation="-90 -90 0" position="10.799 -0.504 13.932"></a-image>
+                <a-image src="#card4" rotation="-90 -90 0" position="14.008 -0.504 12.247"></a-image>
+                <a-box id="plane" position="6.636 -0.842 6.443" width="5" depth="3" height="0.1" static-body geometry="width:54.36;depth:35.44" color="rgb(146, 111, 58)"></a-box>
+                
+                <a-box id="box" position="-3.336 -0.354 11.048" grabbable   posset dynamic-body="linearDamping:0.5; angularDamping:0.3"  material="src:#card1"></a-box>
+                <a-box id="box1" position="-9.461 -0.283 13.867" grabbable  posset dynamic-body="linearDamping:0.5; angularDamping:0.3" material="src:#card2"></a-box>
+                <a-box id="box2" position="16.881 -0.429 10.281" grabbable  posset dynamic-body="linearDamping:0.5; angularDamping:0.3" material="src:#card3"></a-box>
+                <a-box id="box2" position="19.878 -0.422 13.515" grabbable  posset dynamic-body="linearDamping:0.5; angularDamping:0.3" material="src:#card4"></a-box>
                
                 <a-entity gltf-model="#bed" position="-22.6954 0.76487 17.67232" scale="0.007 0.007 0.007" rotation="0 180 0">                           
                 </a-entity>
@@ -101,9 +107,9 @@ AFRAME.registerComponent('raycaster-autorefresh', {
                 <a-entity id="m"glb-model="#monster" position="-22.6954 0.76487 17.67232"  rotation="0 180 0">          
                 </a-entity>
                 
-                <a-entity id="c" cursor-listener gltf-model="#candle"  scale="0.01 0.01 0.01" position="5.939 -0.747 13.29">          
+                <a-entity   id="c" cursor-listener gltf-model="#candle"  scale="0.01 0.01 0.01" position="5.939 -0.747 13.29" >        
                 </a-entity>
-                <a-box cursor-listener color="#CCC" width="3" depth="3" height="0.1" position="5.939 -0.747 13.29"></a-box>
+                <a-box cursor-listener="" color="#CCC" width="3" depth="3" height="0.1" position="5.939 -1.004 13.29"></a-box>
                 <a-text id="test" value="Monsters hate me" position="6.986 0.6 13.679" rotation="0 -180 0"></a-text>
                
                 <a-entity light="type: spot" position="8.27914 3.15844 -10.91814"></a-entity>
