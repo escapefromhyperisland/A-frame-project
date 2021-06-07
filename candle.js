@@ -8,9 +8,7 @@ hallMonster2.setAttribute('position', {x: 0.883, y: 0.000, z: 17.401});
 let candle=document.getElementById("c");
 candle.setAttribute('visible','false')
 let text=document.getElementById("test");
-text.setAttribute('visible','false')
-
-console.log(candle)              
+text.setAttribute('visible','false')          
 });
 }
 });

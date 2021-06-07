@@ -1,8 +1,12 @@
 .container {
     display: flex;
     background-color: rgb(146, 111, 58);
-    color:white
+    color:white;
+    align-items: center;
+    
 }
-.container > h1 {
-  margin:6px
+
+li {
+    list-style-type: none;
+    margin:4px;
 }
