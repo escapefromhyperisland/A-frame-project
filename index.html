@@ -47,13 +47,9 @@
             
             <a-scene inspector-plugin-recast physics="gravity:-9.8; restitution:0.7">
                
-                
-                <a-assets>
-                    <a-asset-item id="city" src="assets/city1/city.glb"></a-asset-item>
-                    <a-asset-item id="candle" src="assets/candle1/candle.glb"></a-asset-item>
-                </a-assets>
+              
    
-                <a-entity gltf-model="#city"position="0 -3 0" scale="2 2 2">
+                <a-entity gltf-model="assets/city1/city.glb"position="0 -3 0" scale="2 2 2">
 
                 </a-entity>
                 
@@ -67,8 +63,7 @@
                                       
                     </a-entity>
                 </a-entity>
-               <!-- <a-entity text-geometry="value: monster's\nUnder The Bed; font:#optimerBoldFont" 
-                material="src:#rusted" position="12.70102 2.26023 -16.5879" rotation="0 -90 0"></a-entity>-->
+             
                 <a-text value="...awaits you!"  position="9.637 3.0 -13.46" rotation="0 -180 0"></a-text>
                 
                
@@ -149,7 +144,7 @@
                     </a-animation>                          
                 </a-entity>
                 
-                <a-entity   id="c" cursor-listener gltf-model="#candle"  scale="0.01 0.01 0.01" position="5.939 -0.747 13.29" >        
+                <a-entity   id="c" cursor-listener gltf-model="assets/candle1/candle.glb"  scale="0.01 0.01 0.01" position="5.939 -0.747 13.29" >        
                 </a-entity>
                 <a-box cursor-listener="" color="#CCC" width="3" depth="3" height="0.1" position="5.939 -1.004 13.29"></a-box>
                 <a-text id="test" value="Monsters hate me" position="6.986 0.6 13.679" rotation="0 -180 0"></a-text>
