@@ -15,6 +15,9 @@
         <script src="card-three.js"></script>
         <script src="card-four.js"></script>
         <script src="coin.js"></script>
+        <script src="coin-two.js"></script>
+        <script src="coin-three.js"></script>
+        <script src="coin-four.js"></script>
        <link rel="stylesheet" href="style.css">
         <title>3D module</title>
     </head>
@@ -116,7 +119,7 @@
 
                      </a-animation>
                 </a-cylinder>
-                <a-cylinder id="coin2"  src ="assets/images/coin.png" color="yellow" height="0.2" radius="1" rotation =" 90 0 0"  position="9.897 1.264 6.104">
+                <a-cylinder id="coin2"  coin-handler-two src ="assets/images/coin.png" color="yellow" height="0.2" radius="1" rotation =" 90 0 0"  position="9.897 1.264 6.104">
                     <a-animation attribute="rotation"
                     to="0 360 0"
                     repeat="indefinite"
@@ -125,7 +128,7 @@
 
                      </a-animation>
                 </a-cylinder>
-                <a-cylinder id="coin3"  src ="assets/images/coin.png" color="yellow" height="0.2" radius="1" rotation =" 90 0 0"  position="25.161 0.567 12.451">
+                <a-cylinder id="coin3" coin-handler-three src ="assets/images/coin.png" color="yellow" height="0.2" radius="1" rotation =" 90 0 0"  position="25.161 0.567 12.451">
                     <a-animation attribute="rotation"
                     to="0 360 0"
                     repeat="indefinite"
@@ -134,7 +137,7 @@
 
                      </a-animation>
                 </a-cylinder>
-                <a-cylinder id="coin4"  src ="assets/images/coin.png" color="yellow" height="0.2" radius="1" rotation =" 90 0 0"   position="34.504 1.55 19.12" >
+                <a-cylinder id="coin4" coin-handler-four src ="assets/images/coin.png" color="yellow" height="0.2" radius="1" rotation =" 90 0 0"   position="34.504 1.55 19.12" >
                     <a-animation attribute="rotation"
                     to="0 360 0"
                     repeat="indefinite"
