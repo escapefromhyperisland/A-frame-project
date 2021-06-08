@@ -5,7 +5,7 @@ AFRAME.registerComponent('card-four', {
         console.log("i m here")
       var pos = el.getAttribute('position')
       console.log(pos)
-      if( pos.x <= -6 && pos.x >= -8 && pos.z <=13 && pos.z >=12) {
+      if( pos.x <= 15 && pos.x >= 13 && pos.z <=13 && pos.z >=11) {
         let boxOne=document.getElementById("boxFour");
         let imageOne=document.getElementById("imageFour");
         let image2=document.getElementById("aImage4");
