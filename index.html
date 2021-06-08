@@ -17,6 +17,7 @@
         <script src="coin-two.js"></script>
         <script src="coin-three.js"></script>
         <script src="coin-four.js"></script>
+        <script src="exit.js"></script>
        <link rel="stylesheet" href="style.css">
         <title>3D module</title>
     </head>
@@ -41,8 +42,10 @@
                    <li id="imageFour"><img src="assets/images/card4.jpg" style="width:40px;"></li>
                </ul>
             </div>
+            <div>
+                <marquee behavior="scroll" direction="left"><h1>monsters under the bed has been escaped find the safe place...</h1></marquee>
+            </div>
             
-        
     </div>
             
             <a-scene inspector-plugin-recast physics="gravity:-9.8; restitution:0.7">
@@ -86,10 +89,17 @@
                 <a-box id="boxThree" position="16.881 -0.429 10.281" grabbable   dynamic-body="linearDamping:0.5; angularDamping:0.3" material="src:assets/images/card3.jpg" card-three></a-box>
                 <a-box id="boxFour" position="19.878 -0.422 13.515" grabbable   dynamic-body="linearDamping:0.5; angularDamping:0.3" material="src:assets/images/card4.jpg" card-four></a-box>
                
-                <a-entity gltf-model="assets/room/bed.glb" position="-22.6954 0.76487 17.67232" scale="0.007 0.007 0.007" rotation="0 180 0">                           
+                
+                
+                <a-entity gltf-model="assets/room/bed.glb" position="-22.695 0.765 17.672" scale="0.007 0.007 0.007" rotation="-6.41712730546522 113.96130545152074 1.2032113697747289">                           
                 </a-entity>
                 
+                <a-cylinder id="exit" exit-handler color="red" height="0.2" radius="1" rotation="90 0 0" position="-22.695 2.288 17.672">
+                    
+                </a-cylinder>
                
+                <a-text value="Congratulations!! you found the safe place" position="-20.783 3.571 17.447" rotation="46.63876452364901 172.05922587778622 9.167324722093172"></a-text>
+                <a-text value="Exit"  position="-22.301 2.421 17.447" rotation="15.355268909506064 174.35105705830952 13.464508185574346"></a-text>
                 <a-cylinder id="coin1" coin-handler src ="assets/images/coin.png" color="yellow" height="0.2" radius="1" rotation =" 90 0 0"  position="-10.33 2.034 12.422">
                     <a-animation attribute="rotation"
                     to="0 360 0"
