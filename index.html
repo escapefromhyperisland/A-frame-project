@@ -20,9 +20,16 @@
     <body>
         <div class="container">
             
-            <h1>Coins: 0</h1>
-            <div>
-                
+            <div> 
+                <ul class="container">
+                    <li><h1>Coins :</h1></li>
+                    <li id="coinOne"><img src="assets/images/coin.png" style="width:40px;"></li>
+                    <li id="coinTwo"><img src="assets/images/coin.png" style="width:40px;"></li>
+                    <li id="coinThree"><img src="assets/images/coin.png" style="width:40px;"></li>
+                    <li id="coinFour"><img src="assets/images/coin.png" style="width:40px;"></li>
+                </ul>
+             </div>
+            <div> 
                <ul class="container">
                    <li><h1>Cards :</h1></li>
                    <li id="imageOne"><img src="assets/images/card1.jpg" style="width:40px;"></li>
@@ -42,6 +49,7 @@
                     <a-asset-item id="city" src="assets/city/city.glb"></a-asset-item>
                     <a-asset-item id="bed" src="assets/bed/bed.glb"></a-asset-item>
                     <a-asset-item id="zombie" src="assets/zombie_face/zombie.glb"></a-asset-item>
+                    <a-asset-item id="coin" src="assets/coin/scene.gltf"></a-asset-item>
                   
                    
                     <a-asset-item id="candle" src="assets/candle/candle.glb"></a-asset-item>
@@ -52,12 +60,12 @@
                     <img id="card2" src="assets/images/card2.jpg">
                     <img id="card3" src="assets/images/card3.jpg">
                     <img id="card4" src="assets/images/card4.jpg">
-                   
+                    <img id="coin" src="assets/images/coin.png">
                   
                   
 
                 </a-assets>
-                <a-sky src="#sky"></a-sky>
+   
                 <a-entity gltf-model="#city"position="0 -3 0" scale="2 2 2">
 
                 </a-entity>
@@ -66,8 +74,8 @@
                     <a-entity camera position ="0 1.6 0"
                                       look-controls="pointerLockEnabled:true"
                                       ><a-cursor color="white"></a-cursor>
-                                    <!----  <a-sound src="url(assets/sounds/backGround.mp3)" autoplay="true"
-                 position="0 0 0" loop="true" volume="0.5"></a-sound>-->
+                                     <a-sound src="url(assets/sounds/backGround.mp3)" autoplay="true"
+                 position="0 0 0" loop="true" volume="0.5"></a-sound>
                     </a-entity>
                                       
                     </a-entity>
@@ -96,6 +104,54 @@
                
                 <a-entity gltf-model="#bed" position="-22.6954 0.76487 17.67232" scale="0.007 0.007 0.007" rotation="0 180 0">                           
                 </a-entity>
+                
+                <a-entity gltf-model="assets/coin/scene.gltf" position="-10.33 2.034 12.422" scale="0.5 0.5 0.5" rotation="0 180 0">  
+                    <a-animation attribute="rotation"
+                    to="0 360 0"
+                    repeat="indefinite"
+                    dur="5000"
+                    easing="linear">
+
+                    </a-animation>                          
+                </a-entity>
+                <a-entity gltf-model="assets/coin/scene.gltf" position="9.897 1.264 6.104" scale="0.5 0.5 0.5" rotation="0 180 0"> 
+                    <a-animation attribute="rotation"
+                    to="0 360 0"
+                    repeat="indefinite"
+                    dur="5000"
+                    easing="linear">
+
+                     </a-animation>                           
+                </a-entity>
+                <a-entity gltf-model="assets/coin/scene.gltf" position="25.161 0.567 12.451" scale="0.5 0.5 0.5" rotation="0 180 0"> 
+                    <a-animation attribute="rotation"
+                    to="0 360 0"
+                    repeat="indefinite"
+                    dur="5000"
+                    easing="linear">
+
+                 </a-animation>                           
+                </a-entity>
+                <a-image src="#coin" scale="0.5 0.5 0.5" position="25.161 0.567 12.451"> 
+                    <a-animation attribute="rotation"
+                    to="0 360 0"
+                    repeat="indefinite"
+                    dur="5000"
+                    easing="linear">
+
+                 </a-animation>                           
+                </a-image>
+                <a-entity gltf-model="assets/coin/scene.gltf" position="34.504 1.55 19.12" scale="0.5 0.5 0.5" rotation="0 180 0"> 
+                    <a-animation attribute="rotation"
+                    to="0 360 0"
+                    repeat="indefinite"
+                    dur="5000"
+                    easing="linear">
+
+                 </a-animation>                           
+                </a-entity>
+                                    
+               
                 <a-entity light="type: spot" position="-5.553 5.029 12.39"></a-entity>
                 <a-entity id="hall-monster-2" gltf-model="#hall-monster" position="-0.337 0 11.910" scale="0.0015 0.0015 0.0015" rotation="0 -90 0"> 
                     <a-animation attribute="rotation"
