@@ -46,10 +46,12 @@
     </div>
             
             <a-scene inspector-plugin-recast physics="gravity:-9.8; restitution:0.7">
-               
+               <a-assets>
+                     <a-asset-item id="city" src="assets/city1/city.glb" ></a-asset-item>
+               </a-assets>
               
    
-                <a-entity gltf-model="assets/city1/city.glb"position="0 -3 0" scale="2 2 2">
+                <a-entity gltf-model="#city"position="0 -3 0" scale="2 2 2">
 
                 </a-entity>
                 
