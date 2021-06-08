@@ -14,6 +14,7 @@
         <script src="card-two.js"></script>
         <script src="card-three.js"></script>
         <script src="card-four.js"></script>
+        <script src="coin.js"></script>
        <link rel="stylesheet" href="style.css">
         <title>3D module</title>
     </head>
@@ -105,53 +106,43 @@
                 <a-entity gltf-model="#bed" position="-22.6954 0.76487 17.67232" scale="0.007 0.007 0.007" rotation="0 180 0">                           
                 </a-entity>
                 
-                <a-entity gltf-model="assets/coin/scene.gltf" position="-10.33 2.034 12.422" scale="0.5 0.5 0.5" rotation="0 180 0">  
-                    <a-animation attribute="rotation"
-                    to="0 360 0"
-                    repeat="indefinite"
-                    dur="5000"
-                    easing="linear">
-
-                    </a-animation>                          
-                </a-entity>
-                <a-entity gltf-model="assets/coin/scene.gltf" position="9.897 1.264 6.104" scale="0.5 0.5 0.5" rotation="0 180 0"> 
-                    <a-animation attribute="rotation"
-                    to="0 360 0"
-                    repeat="indefinite"
-                    dur="5000"
-                    easing="linear">
-
-                     </a-animation>                           
-                </a-entity>
-                <a-entity gltf-model="assets/coin/scene.gltf" position="25.161 0.567 12.451" scale="0.5 0.5 0.5" rotation="0 180 0"> 
-                    <a-animation attribute="rotation"
-                    to="0 360 0"
-                    repeat="indefinite"
-                    dur="5000"
-                    easing="linear">
-
-                 </a-animation>                           
-                </a-entity>
-                <a-image src="#coin" scale="0.5 0.5 0.5" position="25.161 0.567 12.451"> 
-                    <a-animation attribute="rotation"
-                    to="0 360 0"
-                    repeat="indefinite"
-                    dur="5000"
-                    easing="linear">
-
-                 </a-animation>                           
-                </a-image>
-                <a-entity gltf-model="assets/coin/scene.gltf" position="34.504 1.55 19.12" scale="0.5 0.5 0.5" rotation="0 180 0"> 
-                    <a-animation attribute="rotation"
-                    to="0 360 0"
-                    repeat="indefinite"
-                    dur="5000"
-                    easing="linear">
-
-                 </a-animation>                           
-                </a-entity>
-                                    
                
+                <a-cylinder id="coin1" coin-handler src ="assets/images/coin.png" color="yellow" height="0.2" radius="1" rotation =" 90 0 0"  position="-10.33 2.034 12.422">
+                    <a-animation attribute="rotation"
+                    to="0 360 0"
+                    repeat="indefinite"
+                    dur="5000"
+                    easing="linear">
+
+                     </a-animation>
+                </a-cylinder>
+                <a-cylinder id="coin1" coin-handler src ="assets/images/coin.png" color="yellow" height="0.2" radius="1" rotation =" 90 0 0"  position="9.897 1.264 6.104">
+                    <a-animation attribute="rotation"
+                    to="0 360 0"
+                    repeat="indefinite"
+                    dur="5000"
+                    easing="linear">
+
+                     </a-animation>
+                </a-cylinder>
+                <a-cylinder id="coin1" coin-handler src ="assets/images/coin.png" color="yellow" height="0.2" radius="1" rotation =" 90 0 0"  position="25.161 0.567 12.451">
+                    <a-animation attribute="rotation"
+                    to="0 360 0"
+                    repeat="indefinite"
+                    dur="5000"
+                    easing="linear">
+
+                     </a-animation>
+                </a-cylinder>
+                <a-cylinder id="coin1" coin-handler src ="assets/images/coin.png" color="yellow" height="0.2" radius="1" rotation =" 90 0 0"   position="34.504 1.55 19.12" >
+                    <a-animation attribute="rotation"
+                    to="0 360 0"
+                    repeat="indefinite"
+                    dur="5000"
+                    easing="linear">
+
+                     </a-animation>
+                </a-cylinder>
                 <a-entity light="type: spot" position="-5.553 5.029 12.39"></a-entity>
                 <a-entity id="hall-monster-2" gltf-model="#hall-monster" position="-0.337 0 11.910" scale="0.0015 0.0015 0.0015" rotation="0 -90 0"> 
                     <a-animation attribute="rotation"
