@@ -3,7 +3,7 @@ AFRAME.registerComponent('exit-handler', {
       var el = this.el;
       el.addEventListener('click', function (evt) {
         console.log("i m here")
-        location.href="http://google.com/"
+        location.href="https://www.supipi.nu/candy-world/"
       
       })
     }
