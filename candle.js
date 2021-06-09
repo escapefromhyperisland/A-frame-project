@@ -1,3 +1,11 @@
+function hide() {
+    let x = document.getElementById('hide-div')
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+}
 AFRAME.registerComponent('cursor-listener', {
     init: function () {
 this.el.addEventListener('click', function (evt) {

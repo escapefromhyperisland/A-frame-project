@@ -13,3 +13,55 @@ li {
 .displayNone{
     display:none;
 }
+
+.instruction-container{
+    position: fixed;
+    top: 0; 
+    left: 0;
+    transform: translate(calc(50vw - 50%), calc(50vh - 50%));
+    z-index: 999;
+    border: 1px solid rgb(253, 250, 250);
+  
+    background-color: rgb(146, 111, 58);
+    padding: 1rem 2rem 5rem 2rem;
+    width: 35%;
+    display: block;
+    border-radius: 20px;
+}
+
+h1,h2,p{
+    text-align: center;
+    color:white;
+}
+p{
+    font-size: 20px;
+}
+
+#start{
+    position: fixed;
+    left: 50%;
+    transform: translate(-50%, 0);
+    padding: 12px 30px;
+}
+button {
+    display: inline-block;
+    padding: 15px 25px;
+    font-size: 24px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color: #252926;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+  }
+  
+  button:hover {background-color: #474947}
+  
+  button:active {
+    background-color: #070707;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+  }
